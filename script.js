@@ -56,7 +56,7 @@ function selectedItem() {
 
 function clearAll() {
   
-  if(taskList.innerHTML === '') {
+  if(taskList.innerHTML === '' && doneList.innerHTML === '') {
     let div = document.createElement('div');
     div.className = 'alert text-center alert-success';
     div.innerText = "A lista já está vazia. ;)";
