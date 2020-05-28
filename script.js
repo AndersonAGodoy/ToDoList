@@ -73,6 +73,7 @@ function clearAll() {
       alertDiv.innerHTML = '';  
     },2000);
     taskList.innerHTML = '';
+    doneList.innerHTML = '';
   }
 }
 
