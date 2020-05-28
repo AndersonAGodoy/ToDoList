@@ -84,12 +84,23 @@ h3 {
 
 @media screen and (max-width: 768px) {
   .img {
-    margin-left:80px;
+    width: 350px;
+    /* margin-left:80px; */
+  }
+  .custom {
+    margin-bottom: 10px;
   }
 }
 
 @media screen and (max-width: 570px) {
   .img {
-    margin-left: 50px;
+    width:300px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .img{
+    width: 250px;
   }
 }
