@@ -5,6 +5,7 @@ let addTask = document.getElementById('addTask');
 let inputTask = document.getElementById('inputPlace');
 let alertDiv = document.getElementById('alert-text');
 let clearAllButton = document.getElementById('clearAll');
+let clearAllDoneButton = document.getElementById('clearAllDone');
 let clearSelectedButton = document.getElementById('clearSelected');
 let toUpButton = document.getElementById('toUp');
 let toDownButton = document.getElementById('toDown');
@@ -77,6 +78,30 @@ function clearAll() {
   }
 }
 
+function adicionarTarefaEnter(tecla) {
+  if (tecla.key === 'Enter') {
+    createTask(); 
+  }
+}
+
+function clearAllTaskDone() {
+  if(doneList.innerHTML === '') {
+    let div = document.createElement('div');
+    div.className = 'alert text-center alert-success';
+    div.innerText = "Nada para excluir.";
+    alertDiv.appendChild(div);
+  } else {
+    let div = document.createElement('div');
+    div.className = 'alert text-center alert-success';
+    div.innerText = "Tarefas concluídas excluídas";
+    alertDiv.appendChild(div);
+    doneList.innerHTML = '';
+  }
+  setTimeout(function(){
+    alertDiv.innerHTML= '';
+  }, 2000);
+}
+
 function clearSelected() {
   let liSelected = document.getElementById('active');
   taskList.removeChild(liSelected);
@@ -147,6 +172,8 @@ function getSavedList() {
   taskList.innerHTML = savedList;
 }
 
+clearAllDoneButton.addEventListener('click', clearAllTaskDone);
+inputTask.addEventListener('keyup',adicionarTarefaEnter);
 saveListButton.addEventListener('click', setSavedList);
 toUpButton.addEventListener('click', toUp);
 toDownButton.addEventListener('click', toDown);
