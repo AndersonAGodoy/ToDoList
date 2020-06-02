@@ -160,6 +160,10 @@ function setSavedList() {
     div.innerText = "Não há nada para salvar.";
     alertDiv.appendChild(div);
   } else {
+    let div = document.createElement('div');
+    div.className = 'alert text-center alert-success';
+    div.innerText = "Lista salva com sucesso.";
+    alertDiv.appendChild(div);
     localStorage.setItem('saved list', taskList.innerHTML);
   }
   setTimeout(function(){
